@@ -1,0 +1,96 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "g++ build active file",
+      "command": "/usr/local/bin/gpp",
+      "args": [
+        "-g",
+        "-Wall",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "/usr/local/bin"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
+      "label": "clang++ build active file",
+      "command": "clang++",
+      "args": [
+        "-std=c++17",
+        "-stdlib=libc++",
+        "-x",
+        "c++",
+        "-Wall",
+        "-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "--debug"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "RunActiveCode",
+      "type": "shell",
+      "command": "cd ${fileDirname} && ./${fileBasenameNoExtension}",
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "CheckTestCase",
+      "type": "shell",
+      "command": "cd ${fileDirname} && rm -f ${fileDirname}/${fileBasenameNoExtension} && gpp ${fileBasename} -o ${fileBasenameNoExtension} && oj test -c \"${fileDirname}/${fileBasenameNoExtension}\" -d ${fileDirname}/tests/",
+      "presentation": {
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "SubmitCode",
+      "type": "shell",
+      "command": "cd ${fileDirname} && acc s ${fileBasename} -- -y",
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "C/C++: clang++ build active file",
+      "command": "/usr/local/opt/llvm/bin/clang++",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
