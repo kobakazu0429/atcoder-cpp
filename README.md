@@ -17,7 +17,7 @@
 
 ## Not Supported
 
-- [] debug mode(I always use gpp. but should be using clang++ more than gpp in debug mode and I don't know how to use it in my environment.)
+- [ ] debug mode(I always use gpp. but should be using clang++ more than gpp in debug mode and I don't know how to use it in my environment.)
 
 ## Reference
 
