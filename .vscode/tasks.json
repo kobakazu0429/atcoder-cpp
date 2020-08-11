@@ -15,9 +15,7 @@
       "options": {
         "cwd": "/usr/local/bin"
       },
-      "problemMatcher": [
-        "$gcc"
-      ],
+      "problemMatcher": ["$gcc"],
       "group": {
         "kind": "build",
         "isDefault": true
@@ -33,7 +31,6 @@
         "-x",
         "c++",
         "-Wall",
-        "-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1",
         "${file}",
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}",
@@ -84,9 +81,7 @@
       "options": {
         "cwd": "${workspaceFolder}"
       },
-      "problemMatcher": [
-        "$gcc"
-      ],
+      "problemMatcher": ["$gcc"],
       "group": {
         "kind": "build",
         "isDefault": true
