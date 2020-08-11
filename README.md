@@ -14,10 +14,11 @@
 - [x] create new contest file from template
 - [x] create test fixtures and run it.
 - [x] submit source code(attention: no confirm)
+- [x] debug mode
 
 ## Not Supported
 
-- [ ] debug mode(I always use gpp. but should be using clang++ more than gpp in debug mode and I don't know how to use it in my environment.)
+- [ ] GitHub Actions(compile, test) in Pull Request
 
 ## Reference
 
